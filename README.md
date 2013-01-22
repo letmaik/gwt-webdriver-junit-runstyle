@@ -17,7 +17,6 @@ Add surefire config:
 ```
   <plugin>
     <artifactId>maven-surefire-plugin</artifactId>
-    <version>2.6</version>
     <configuration>
       <additionalClasspathElements>
         <additionalClasspathElement>${project.build.sourceDirectory}</additionalClasspathElement>
@@ -28,12 +27,15 @@ Add surefire config:
       <systemProperties>
         <property>
           <name>gwt.args</name>
-          <value>-out ${webAppDirectory} -prod -runStyle com.github.neothemachine.gwt.junit.RunStyleWebDriver:localhost:4444/*firefox</value>
+          <value>-prod -runStyle com.github.neothemachine.gwt.junit.RunStyleWebDriver:localhost:4444/*firefox -out ${project.build.directory}/${project.build.finalName}</value>
         </property>
       </systemProperties>
     </configuration>
   </plugin>
 ```
+
+Known issues
+============
 
 At the moment, the gwt-maven-plugin cannot be used, as it is 
 [hardcoded](https://github.com/gwt-maven-plugin/gwt-maven-plugin/blob/master/src/main/java/org/codehaus/mojo/gwt/shell/TestMojo.java#L298)
