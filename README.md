@@ -17,6 +17,7 @@ Add surefire config:
 ```
   <plugin>
     <artifactId>maven-surefire-plugin</artifactId>
+    <version>2.13</version>
     <configuration>
       <additionalClasspathElements>
         <additionalClasspathElement>${project.build.sourceDirectory}</additionalClasspathElement>
