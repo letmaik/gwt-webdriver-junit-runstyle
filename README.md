@@ -1,7 +1,7 @@
 Usage
 =====
 
-Add maven dependency:
+Add maven dependency (not on Maven Central yet!):
 
 ```
 <dependency>
